@@ -5,8 +5,9 @@ import ApiCollection from './apiCollection/apiCollection';
 import Imgupload from './imgUpload/imgupload';
 
 
-function App() {
+function App({FileInput}) {
   const name = useState('apple');
+  console.log(FileInput);
   return (
     <div className="App">
       <header className="App-header">
@@ -15,9 +16,10 @@ function App() {
           <li>관심사</li>
         </ul>
       </header>
+      
       <SelfIntroduction/>
       <ApiCollection props={name}/> 
-      <Imgupload/> 
+      <Imgupload FileInput={FileInput}/> 
     </div>
   );
   
