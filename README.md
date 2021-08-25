@@ -8,3 +8,8 @@ i hope someone else would know me
 ### My Interest
 
 
+## Use Cloudinary and FireBase
+1. image uploading Cloudinary
+2. image url save FireBase
+
+

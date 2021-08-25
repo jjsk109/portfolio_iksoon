@@ -1,7 +1,7 @@
 
 const Imgupload = ({FileInput}) => {
   const onFileChange = file => {
-
+    console.log("file",file);
   }
   return (
     <div>
