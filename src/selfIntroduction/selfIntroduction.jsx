@@ -4,7 +4,7 @@ import styles from './selfIntroduction.modul.css';
 class SelfIntroduction extends Component {
     render() {
         return (
-            <div>
+            <div className={styles.self}>
                 <ul>
                     <li>
                         <span>이름</span>

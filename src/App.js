@@ -1,4 +1,4 @@
-import { Component, useState } from 'react';
+import {  useState } from 'react';
 import './App.css';
 import SelfIntroduction from './selfIntroduction/selfIntroduction';
 import ApiCollection from './apiCollection/apiCollection';
@@ -7,7 +7,6 @@ import Imgupload from './imgUpload/imgupload';
 
 function App({FileInput}) {
   const name = useState('apple');
-  console.log(FileInput);
   return (
     <div className="App">
       <header className="App-header">

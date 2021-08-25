@@ -15,7 +15,7 @@ function ApiCollection(props) {
       },
       zoom: 11
     };
-    console.log(props.props[0]);
+    
     const [selectedValue,handleChange] = useState(props.props[0]);
 
     return (
