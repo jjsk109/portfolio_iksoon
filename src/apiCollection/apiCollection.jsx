@@ -4,6 +4,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { Radio, RadioGroup } from 'react-radio-group';
 
+
 function ApiCollection(props) {
     const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -45,6 +46,7 @@ function ApiCollection(props) {
                 <Radio value="orange" />Orange
                 <Radio value="watermelon" />Watermelon
             </RadioGroup>
+        
         </div>
     );
 }

@@ -5,7 +5,7 @@ import ApiCollection from './apiCollection/apiCollection';
 import Imgupload from './imgUpload/imgupload';
 
 
-function App({FileInput}) {
+function App({FileInput, imageDatabase}) {
   const name = useState('apple');
   return (
     <div className="App">
@@ -18,7 +18,10 @@ function App({FileInput}) {
       
       <SelfIntroduction/>
       <ApiCollection props={name}/> 
-      <Imgupload FileInput={FileInput}/> 
+      <Imgupload 
+        FileInput={FileInput}
+        imageDatabase = {imageDatabase}
+      /> 
     </div>
   );
   

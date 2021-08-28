@@ -3,7 +3,7 @@ import {useDropzone} from 'react-dropzone'
 import styles from './myDropzone.module.css'
 
 const MyDropzone = ({imageUploader, onFileChange}) => {
-
+console.log("MyDropzone ref")
   const onDrop =  useCallback(( acceptedFiles) => {
         acceptedFiles.forEach((file) => {
         const reader = new FileReader()
@@ -14,19 +14,15 @@ const MyDropzone = ({imageUploader, onFileChange}) => {
           const uploaded =  await imageUploader.upload(file);
 
           console.log("uploaded :",uploaded);
+          const time =  Date.now();
           onFileChange({
-            name: uploaded.original_filename,
+            id:time,
             url: uploaded.url,
           });
         }
         reader.readAsArrayBuffer(file)
-    
-        //const uploaded =   imageUploader.upload(file);
-        
         
       })
-      
-      
   }, [])
 
 
