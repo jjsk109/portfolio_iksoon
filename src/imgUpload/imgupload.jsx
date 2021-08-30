@@ -5,17 +5,28 @@ import ImgGallery from "./imgGallery";
 const Imgupload = ({FileInput,imageDatabase}) => {
   //const [photos, setFile] = useState({ src: '', width: 1,height:1 });
 
-  const [files, setFile] = useState([
-  ]);
+  const [files, setFile] = useState({});
   console.log("files",files);
-  const onFileChange = file => {
-    console.log("file",file);
-    const updated = [...files, file];
-    console.log("update",updated);
-    setFile(updated);
 
-    const stopSync = imageDatabase.syncImages();
+  useEffect(() => {
+    imageDatabase.syncImages(files =>{
+      setFile(files);
+    });
+  },[ imageDatabase]);
+
+  const onFileChange = file => {
+    setFile(files => {
+      const updated = {...files};
+      updated[file.id] = file.url;
+      return updated;
+    })
+    imageDatabase.saveImage(file.id,file.url);
   }
+
+  const changehan = event => {
+    console.log('test button')
+    imageDatabase.saveImage('1','2');
+  } 
 
   useEffect(() => {
     console.log("useEffect start")
@@ -25,11 +36,9 @@ const Imgupload = ({FileInput,imageDatabase}) => {
       <h3>이미지 업로드</h3>
       <FileInput onFileChange={onFileChange}/>
       <div style={{ height: '50vh', width: '40%' }}>
-      {files.map(file => (
-        <ImgGallery file={file}/>
+      {Object.keys(files).map(key => (
+        <ImgGallery key={key} file={files[key]}/>
       ))}
-       
-      
       </div>
     </div>
   );

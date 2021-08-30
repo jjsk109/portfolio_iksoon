@@ -1,5 +1,5 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/database';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 
 
@@ -11,7 +11,9 @@ const firebaseConfig = {
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
-console.log(firebaseApp);
+
 export const firebaseDatabase = firebaseApp.database();
+
+
 
 

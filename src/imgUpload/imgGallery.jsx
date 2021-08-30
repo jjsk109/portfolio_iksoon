@@ -4,7 +4,7 @@ const ImgGallery = ({file}) => {
     console.log("ImgGallery",file);
     return(
         <div>
-            <img src={file.url} alt="" />
+            <img src={file} alt="" />
         </div>
     )
 }
