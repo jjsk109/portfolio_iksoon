@@ -27,8 +27,7 @@ console.log("MyDropzone ref")
 
 
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
-   
-  
+
 
   return (
  

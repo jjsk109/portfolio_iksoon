@@ -1,0 +1,16 @@
+.nav{
+    
+     box-shadow: 1px 10px 5px #eee ;
+}
+
+.list{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10%;
+}
+.tag{
+    padding: 20px;
+}
+.tag>a{
+    font-size: 20px;
+}

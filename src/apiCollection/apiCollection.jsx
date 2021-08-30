@@ -27,7 +27,7 @@ function ApiCollection(props) {
                 value={value}  
             />
             <h3>구글지도 어썸</h3>
-            <div style={{ height: '50vh', width: '50%' }}>
+            <div style={{ height: '50vh', width: '100' }}>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: "" }}
                     defaultCenter={defaultProps.center}

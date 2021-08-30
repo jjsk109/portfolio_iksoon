@@ -1,7 +1,8 @@
 .zoon {
     width: 500px; 
-    height: 500px;
+    height: 50px;
     border: 2px dotted black;
     border-radius: 10px;
     margin: 50px 50px ;
+    text-align: center;
 }

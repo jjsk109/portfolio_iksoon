@@ -1,27 +1,36 @@
 import {  useState } from 'react';
-import './App.css';
+import styles from './App.module.css';
 import SelfIntroduction from './selfIntroduction/selfIntroduction';
 import ApiCollection from './apiCollection/apiCollection';
 import Imgupload from './imgUpload/imgupload';
+import PortfolioHeader from './header/portfolioHeader';
 
 
 function App({FileInput, imageDatabase}) {
   const name = useState('apple');
+  const [page, setPage] = useState('self');
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <ul>
-          <li>자기소개</li>
-          <li>관심사</li>
-        </ul>
-      </header>
+    <div className={styles.App}>
+      <PortfolioHeader setPage={setPage} />
+      <section className={styles.toc}>
+      {(() => {
+        switch (page) {
+          case 'self':
+            return  <SelfIntroduction/>
+          case 'asw':
+            return  <ApiCollection props={name}/> 
+          case 'habbit':
+            return <Imgupload 
+              FileInput={FileInput}
+              imageDatabase = {imageDatabase}
+            /> 
+          default:
+            return null
+        }
+      })()}    
+    </section>
       
-      <SelfIntroduction/>
-      <ApiCollection props={name}/> 
-      <Imgupload 
-        FileInput={FileInput}
-        imageDatabase = {imageDatabase}
-      /> 
     </div>
   );
   

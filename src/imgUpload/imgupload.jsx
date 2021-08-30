@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import ImgGallery from "./imgGallery";
+import ImgGallery from "./imgGallery/imgGallery";
+import styles from './imgupload.module.css';
 
 const Imgupload = ({FileInput,imageDatabase}) => {
   //const [photos, setFile] = useState({ src: '', width: 1,height:1 });
@@ -35,7 +36,7 @@ const Imgupload = ({FileInput,imageDatabase}) => {
     <div>
       <h3>이미지 업로드</h3>
       <FileInput onFileChange={onFileChange}/>
-      <div style={{ height: '50vh', width: '40%' }}>
+      <div className={styles.gallery}>
       {Object.keys(files).map(key => (
         <ImgGallery key={key} file={files[key]}/>
       ))}

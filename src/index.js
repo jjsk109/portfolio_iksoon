@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ImageUploader from './service/image_uploader';
-import MyDropzone from './imgUpload/myDropzone';
+import MyDropzone from './imgUpload/myDropzone/myDropzone';
 import ImageDatabase from './service/image_database';
 
 const imageDatabase = new ImageDatabase();

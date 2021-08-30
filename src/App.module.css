@@ -1,0 +1,8 @@
+ul, li, ol{
+    list-style: none;
+}
+
+.toc{
+    width: 700px;
+    margin:0 auto ;
+}
