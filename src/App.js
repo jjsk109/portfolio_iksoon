@@ -12,6 +12,9 @@ function App({FileInput, imageDatabase}) {
  
   return (
     <div className={styles.App}>
+      <div className={styles.background}>
+       <img  src='https://res.cloudinary.com/dpwxqv19q/image/upload/v1630390131/fairy-tale-1180921_1920_xf3yx7.png' alt="잠자는 밤화면 배경" />
+       </div>
       <PortfolioHeader setPage={setPage} />
       <section className={styles.toc}>
       {(() => {

@@ -1,12 +1,17 @@
 .nav{
     
-     box-shadow: 1px 10px 5px #eee ;
+     margin-bottom: 50px;
+}
+
+.logo{
+    margin: 20px 0;
+    text-align: center;
 }
 
 .list{
     display: flex;
-    justify-content: flex-start;
-    margin-left: 10%;
+    justify-content: center;
+color: blanchedalmond;
 }
 .tag{
     padding: 20px;

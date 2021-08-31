@@ -1,7 +1,13 @@
 ul, li, ol{
     list-style: none;
 }
-
+.background{
+    width: 100%;
+    /* height: 100%; */
+    position: absolute;
+    z-index: -1;
+    text-align: center;
+}
 .toc{
     width: 700px;
     margin:0 auto ;
