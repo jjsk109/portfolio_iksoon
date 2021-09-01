@@ -1,0 +1,42 @@
+.can{
+   position: fixed;
+    width: 100%;
+    height:  100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: -1;
+}
+.button_box>button{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+}
+
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+
+.yello{
+    background-color: yellow;
+}
+.white{
+    background-color: white;
+}
+.brown{
+    background-color: brown;
+}
+.green{
+    background-color: green;
+}
+.pink{
+    background-color: pink;
+}
+
+.button_box>button:active{
+    border: 1px solid black;
+}

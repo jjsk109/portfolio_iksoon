@@ -13,6 +13,9 @@ const PortfolioHeader = ({setPage}) => {
     const onClickHappit = () =>{
         setPage('habbit');
     }
+    const onClickCanvas = () =>{
+        setPage('canvas');
+    }
     return(
     <header className={styles.nav}>
         <div className={styles.logo}>
@@ -22,6 +25,7 @@ const PortfolioHeader = ({setPage}) => {
             <li className={styles.tag}><a onClick={onClickSelf} ><FontAwesomeIcon icon={faAddressCard} size="1x" />  자기소개</a></li>
             <li className={styles.tag}><a onClick={onClickAsw} > <FontAwesomeIcon icon={faBox} size="1x" />이것저것</a></li>
             <li className={styles.tag}><a onClick={onClickHappit}> <FontAwesomeIcon icon={faImages} size="1x" />겔러리</a></li>
+            <li className={styles.tag}><a onClick={onClickCanvas}> <FontAwesomeIcon icon={faImages} size="1x" />켄버스</a></li>
         </ul>
     </header>
 )};
