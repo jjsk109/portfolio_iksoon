@@ -14,7 +14,9 @@ const Mycanvas = (props) => {
     const [size, setSize] = useState(20);
     const [canvasWidth, setCanvasWidth] = useState(0);
     const [canvaHeight, setCanvasHeight] = useState(0);
-    const [commends,setComends] = useState([]);
+    const [commends,setComends] = useState([{}]);
+    const [commendCnt,setCnt] = useState(0)
+
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -24,6 +26,8 @@ const Mycanvas = (props) => {
         setCtx(context);
         setCanvasWidth( canvas.width);
         setCanvasHeight(canvas.height);
+        const draw = [context.getImageData(0,0,canvas.width,canvas.height)];
+        setComends(draw);
     }, []);
 
     const drawStart = event => {
@@ -32,16 +36,31 @@ const Mycanvas = (props) => {
         ctx.arc(event.clientX ,event.clientY,size,Math.PI * 2, false);
         ctx.fillStyle=`${drawColor}`;
         ctx.fill();
-        const setCon = {x:event.clientX ,y:event.clientY,size:size,color:drawColor};
-        const newcon = [setCon,...commends];
-        setComends(newcon);
-        console.log(commends);
+        
     }
     const drawEnd = () => {
         setDraw(false);
+        if(commendCnt !==0){
+            const draw = [ctx.getImageData(0,0,canvasWidth,canvaHeight)];
+            console.log(draw);
+            setComends(draw);
+            setCnt(0);
+        }else{
+            const draw = [ctx.getImageData(0,0,canvasWidth,canvaHeight),...commends];
+            setComends(draw);
+        }
     }
     const finishDrawing = () => {
         setDraw(false);
+        if(commendCnt !==0){
+            const draw = [ctx.getImageData(0,0,canvasWidth,canvaHeight)];
+            console.log(draw);
+            setComends(draw);
+            setCnt(0);
+        }else{
+            const draw = [ctx.getImageData(0,0,canvasWidth,canvaHeight),...commends];
+            setComends(draw);
+        }
     }
     const drawHandel = event => {
         if(draw){
@@ -49,9 +68,7 @@ const Mycanvas = (props) => {
             ctx.arc(event.clientX ,event.clientY,size,Math.PI * 2, false);
             ctx.fillStyle=`${drawColor}`;
             ctx.fill();
-            const setCon = {x:event.clientX ,y:event.clientY,size:size,color:drawColor};
-            const newcon = [setCon,...commends];
-            setComends(newcon);
+         
         }
     }
     const changeColor = selectColor =>{
@@ -72,27 +89,47 @@ const Mycanvas = (props) => {
     const saveHandel = () => {
         console.log("save");
     }
-    const handleKeys = event => {
-        if(event.ctrlKey && event.key ==='z'){
-            const con = commends.shift();
-            console.log(commends);
-           // console.log(con);
+   
+    const beforeHandel = () => {
+        
+        const cnt = commendCnt + 1 ;
+        console.log(commends.length-1);
+        console.log(cnt);
+        if(cnt === commends.length-1){
+            
+            return;
         }
+        ctx.clearRect(0, 0, canvasWidth, canvaHeight);  
+        setCnt(cnt);
+        ctx.beginPath();
+        ctx.putImageData(commends[cnt],0,0);
     }
-    window.addEventListener('keydown', handleKeys);
-
+    const afterHandel = event => {
+       
+        const cnt = commendCnt - 1 ;
+        if(cnt ===  0){
+            
+            return;
+        }
+        ctx.clearRect(0, 0, canvasWidth, canvaHeight);  
+        setCnt(cnt);
+        ctx.beginPath();
+        ctx.putImageData(commends[cnt],0,0);
+        console.log(cnt);
+    }
     return(
             <div>
+
                 <canvas className={styles.can} ref={canvasRef} 
                     onMouseDown={drawStart}
                     onMouseUp={drawEnd}
                     onMouseMove={drawHandel}
                     onMouseLeave={finishDrawing}
-                    
-                   
                 ></canvas>
                 <button className={styles.reset} onClick={resetHandel}>reset</button>
                 <button className={styles.reset} onClick={saveHandel}>save</button>
+                <button className={styles.reset} onClick={beforeHandel}>이전</button>
+                <button className={styles.reset} onClick={afterHandel}>앞으로</button>
                 <div className={styles.button_box}> 
                     <button className={styles.white} onClick={changeColor} value="white"></button>
                     <button className={styles.black} onClick={changeColor} value="black"></button>
