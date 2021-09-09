@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/jjsk109/portfolio_iksoon/static/css/main.f0588e05.chunk.css",
+    "main.js": "/jjsk109/portfolio_iksoon/static/js/main.c023abad.chunk.js",
+    "main.js.map": "/jjsk109/portfolio_iksoon/static/js/main.c023abad.chunk.js.map",
+    "runtime-main.js": "/jjsk109/portfolio_iksoon/static/js/runtime-main.ee196372.js",
+    "runtime-main.js.map": "/jjsk109/portfolio_iksoon/static/js/runtime-main.ee196372.js.map",
+    "static/css/2.8cebfa1f.chunk.css": "/jjsk109/portfolio_iksoon/static/css/2.8cebfa1f.chunk.css",
+    "static/js/2.9fc63cc3.chunk.js": "/jjsk109/portfolio_iksoon/static/js/2.9fc63cc3.chunk.js",
+    "static/js/2.9fc63cc3.chunk.js.map": "/jjsk109/portfolio_iksoon/static/js/2.9fc63cc3.chunk.js.map",
+    "static/js/3.12a51821.chunk.js": "/jjsk109/portfolio_iksoon/static/js/3.12a51821.chunk.js",
+    "static/js/3.12a51821.chunk.js.map": "/jjsk109/portfolio_iksoon/static/js/3.12a51821.chunk.js.map",
+    "index.html": "/jjsk109/portfolio_iksoon/index.html",
+    "static/css/2.8cebfa1f.chunk.css.map": "/jjsk109/portfolio_iksoon/static/css/2.8cebfa1f.chunk.css.map",
+    "static/css/main.f0588e05.chunk.css.map": "/jjsk109/portfolio_iksoon/static/css/main.f0588e05.chunk.css.map",
+    "static/js/2.9fc63cc3.chunk.js.LICENSE.txt": "/jjsk109/portfolio_iksoon/static/js/2.9fc63cc3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ee196372.js",
+    "static/css/2.8cebfa1f.chunk.css",
+    "static/js/2.9fc63cc3.chunk.js",
+    "static/css/main.f0588e05.chunk.css",
+    "static/js/main.c023abad.chunk.js"
+  ]
+}
