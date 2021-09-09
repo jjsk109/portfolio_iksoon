@@ -46,6 +46,7 @@
 .button_box>div{
     width: 20px;
     height: 20px;
+    border: 1px solid black;
 }
 
 .reset{
