@@ -4,11 +4,9 @@ import ImgGallery from "./imgGallery/imgGallery";
 import styles from './imgupload.module.css';
 
 const Imgupload = ({FileInput,imageDatabase}) => {
-  //const [photos, setFile] = useState({ src: '', width: 1,height:1 });
-
+ 
   const [files, setFile] = useState({});
-  console.log("files",files);
-
+ 
   useEffect(() => {
     imageDatabase.syncImages(files =>{
       setFile(files);
@@ -24,13 +22,8 @@ const Imgupload = ({FileInput,imageDatabase}) => {
     imageDatabase.saveImage(file.id,file.url);
   }
 
-  const changehan = event => {
-    console.log('test button')
-    imageDatabase.saveImage('1','2');
-  } 
-
   useEffect(() => {
-    console.log("useEffect start")
+   
   })
   return (
     <div>

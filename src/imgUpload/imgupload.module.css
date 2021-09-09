@@ -1,10 +1,16 @@
 .gallery{
+    position: absolute;
+    left: 0;
     display: flex;
-    width: 80%;
+    width: 100%;
     padding: 0px 3em;
     
+    
+}
+.gallery>div{
+    width: 200px;
+}
+.gallery>div>img{
+    width: 100%;
 }
 
-.gallery img {
-    border: 1px solid gray;
-}

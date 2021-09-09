@@ -5,7 +5,6 @@ class ImageDatabase {
     const ref = firebaseDatabase.ref(`Image/`);
     ref.on('value', snapshot => {
       const value = snapshot.val();
-      console.log(value);
       value && files(value);
     })
     return () => ref.off();

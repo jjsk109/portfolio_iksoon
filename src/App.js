@@ -7,7 +7,7 @@ import PortfolioHeader from './header/portfolioHeader';
 import Mycanvas from './my_canvas/my_canvas';
 
 
-function App({FileInput, imageDatabase}) {
+function App({FileInput, imageDatabase,imageUploader}) {
   const name = useState('apple');
   const [page, setPage] = useState('self');
  
@@ -30,7 +30,9 @@ function App({FileInput, imageDatabase}) {
               imageDatabase = {imageDatabase}
             /> 
           case 'canvas':
-            return  <Mycanvas /> 
+            return  <Mycanvas 
+            imageDatabase = {imageDatabase}
+            imageUploader= {imageUploader}/> 
           default:
             return null
         }

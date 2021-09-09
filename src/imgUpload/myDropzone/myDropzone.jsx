@@ -8,12 +8,8 @@ console.log("MyDropzone ref")
         acceptedFiles.forEach((file) => {
         const reader = new FileReader()
   
-        reader.onabort = () => console.log('file reading was aborted')
-        reader.onerror = () => console.log('file reading has failed')
         reader.onload = async event => {
           const uploaded =  await imageUploader.upload(file);
-
-          console.log("uploaded :",uploaded);
           const time =  Date.now();
           onFileChange({
             id:time,

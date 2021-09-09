@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 
 
-const Mycanvas = (props) => {
+const Mycanvas = ({imageDatabase,imageUploader}) => {
     const canvasRef = useRef(null);
     const [ctx, setCtx] = useState([]);
     const [drawColor,setColor] = useState('white');
@@ -26,8 +26,7 @@ const Mycanvas = (props) => {
         setCtx(context);
         setCanvasWidth( canvas.width);
         setCanvasHeight(canvas.height);
-        const draw = [context.getImageData(0,0,canvas.width,canvas.height)];
-        setComends(draw);
+       
     }, []);
 
     const drawStart = event => {
@@ -42,7 +41,6 @@ const Mycanvas = (props) => {
         setDraw(false);
         if(commendCnt !==0){
             const draw = [ctx.getImageData(0,0,canvasWidth,canvaHeight)];
-            console.log(draw);
             setComends(draw);
             setCnt(0);
         }else{
@@ -54,7 +52,6 @@ const Mycanvas = (props) => {
         setDraw(false);
         if(commendCnt !==0){
             const draw = [ctx.getImageData(0,0,canvasWidth,canvaHeight)];
-            console.log(draw);
             setComends(draw);
             setCnt(0);
         }else{
@@ -86,17 +83,19 @@ const Mycanvas = (props) => {
         ctx.clearRect(0, 0, canvasWidth, canvaHeight);
     }
    
-    const saveHandel = () => {
-        console.log("save");
+    const saveHandel = async event => {
+        const canvas = canvasRef.current;
+
+        const uploaded =  await imageUploader.upload(canvas.toDataURL("image/png"));
+        const time =  Date.now();
+     
+        imageDatabase.saveImage(time,uploaded.url);
     }
    
     const beforeHandel = () => {
         
         const cnt = commendCnt + 1 ;
-        console.log(commends.length-1);
-        console.log(cnt);
-        if(cnt === commends.length-1){
-            
+        if(cnt === commends.length){
             return;
         }
         ctx.clearRect(0, 0, canvasWidth, canvaHeight);  
@@ -104,18 +103,15 @@ const Mycanvas = (props) => {
         ctx.beginPath();
         ctx.putImageData(commends[cnt],0,0);
     }
-    const afterHandel = event => {
-       
+    const afterHandel = () => {
         const cnt = commendCnt - 1 ;
-        if(cnt ===  0){
-            
+        if(cnt <  0){
             return;
         }
         ctx.clearRect(0, 0, canvasWidth, canvaHeight);  
         setCnt(cnt);
         ctx.beginPath();
         ctx.putImageData(commends[cnt],0,0);
-        console.log(cnt);
     }
     return(
             <div>

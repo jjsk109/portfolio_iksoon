@@ -18,6 +18,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App FileInput= {FileInput} 
         imageDatabase = {imageDatabase}
+        imageUploader={imageUploader}
     />
    
   </React.StrictMode>,
