@@ -1,3 +1,59 @@
 .self{
-    background-color: blanchedalmond;
+    background-color: fff;
+    border: 0.5px solid #eee;
+    box-shadow: 1px 1px 10px #e3e3e3;
+    padding: 20px;
+}
+.logo>li{
+    margin-top: 30px;
+}
+.skill{
+    display: flex;
+}
+.skill_Title{
+    flex: 10%;
+}
+.skill_content{
+    flex: 80%;
+    display: flex;
+    flex-shrink:0;
+    
+    flex-wrap: wrap;
+}
+.skill_content>span{
+    
+    text-align: center;
+    width:160px;
+    height: 150px;
+    padding-top:10%;
+    border-radius: 50%;
+    display:inline-block;
+    height: auto;
+    margin: 10px;
+    
+}
+.skill_content>span>div{
+    border-radius: 50%;
+    background: #fff;
+    width: 65%;
+    height: 100%;
+    transform: translate(25%, -30%);
+    padding: 30px;
+    font-weight: bold;
+}
+.html{
+    background: conic-gradient(#f00a28 0% 85%, #eee 85% 100%);
+}
+
+.CSS{
+    background: conic-gradient(#5584e9 0% 75%, #eee 75% 100%);
+}
+.js{
+    background: conic-gradient(#8da505 0% 85%, #eee 85% 100%);
+}
+.react{
+    background: conic-gradient(#0508b9 0% 70%, #eee 70% 100%);
+}
+.java{
+    background: conic-gradient(#fd0728 0% 65%, #eee 65% 100%);
 }

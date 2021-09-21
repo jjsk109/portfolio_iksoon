@@ -11,11 +11,33 @@
 .list{
     display: flex;
     justify-content: center;
-color: blanchedalmond;
+
 }
 .tag{
     padding: 20px;
 }
 .tag>a{
     font-size: 20px;
+}
+
+@media screen and (max-width : 1024px){
+ 
+}
+@media screen and (max-width : 600px){
+    .nav{
+        width: 700px;
+    }
+    .logo{
+        width: 100%;
+        text-align: center;
+    }
+    .list{
+        flex-flow: column;
+        text-align: center;
+    }
+}
+@media screen and (max-width : 400px){
+    .nav{
+        width: 400px;
+    }
 }

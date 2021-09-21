@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styles from './my_canvas.module.css';
 import { useRef } from 'react';
 import { useEffect } from 'react';
+import { faAddressBook, faAddressCard, faBox, faCamera, faCaravan, faImage, faImages, faPenFancy, faUndoAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
@@ -113,6 +115,10 @@ const Mycanvas = ({imageDatabase,imageUploader}) => {
         ctx.beginPath();
         ctx.putImageData(commends[cnt],0,0);
     }
+    const keyHandel  = event => {
+        ctx.clearRect(0, 0, canvasWidth, canvaHeight);
+    }
+    window.addEventListener('keydown',keyHandel.bind());
     return(
             <div>
 
@@ -123,9 +129,9 @@ const Mycanvas = ({imageDatabase,imageUploader}) => {
                     onMouseLeave={finishDrawing}
                 ></canvas>
                 <button className={styles.reset} onClick={resetHandel}>reset</button>
-                <button className={styles.reset} onClick={saveHandel}>save</button>
-                <button className={styles.reset} onClick={beforeHandel}>이전</button>
-                <button className={styles.reset} onClick={afterHandel}>앞으로</button>
+                <button className={styles.reset} onClick={saveHandel}>save</button> <br/>
+                <button className={styles.before} onClick={beforeHandel}><FontAwesomeIcon icon={faUndoAlt} size="1x" /></button>
+                <button className={styles.after} onClick={afterHandel}><FontAwesomeIcon icon={faUndoAlt} size="1x" /></button>
                 <div className={styles.button_box}> 
                     <button className={styles.white} onClick={changeColor} value="white"></button>
                     <button className={styles.black} onClick={changeColor} value="black"></button>

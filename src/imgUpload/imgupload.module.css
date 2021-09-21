@@ -4,11 +4,12 @@
     display: flex;
     width: 100%;
     padding: 0px 3em;
-    
+    flex-wrap: wrap;
     
 }
 .gallery>div{
-    width: 200px;
+    /* width: 200px; */
+    border: 1px solid #eee;
 }
 .gallery>div>img{
     width: 100%;
