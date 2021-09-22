@@ -37,7 +37,8 @@
     }
 }
 @media screen and (max-width : 400px){
-    .nav{
-        width: 400px;
+  
+    .skill_content{
+        flex-flow: column;
     }
 }

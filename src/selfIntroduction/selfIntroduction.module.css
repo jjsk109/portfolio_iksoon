@@ -42,18 +42,32 @@
     font-weight: bold;
 }
 .html{
-    background: conic-gradient(#f00a28 0% 85%, #eee 85% 100%);
+    background: conic-gradient(#f00a28 0% 95%, #eee 95% 100%);
 }
 
 .CSS{
-    background: conic-gradient(#5584e9 0% 75%, #eee 75% 100%);
+    background: conic-gradient(#5584e9 0% 95%, #eee 95% 100%);
 }
 .js{
-    background: conic-gradient(#8da505 0% 85%, #eee 85% 100%);
+    background: conic-gradient(#8da505 0% 95%, #eee 95% 100%);
 }
 .react{
-    background: conic-gradient(#0508b9 0% 70%, #eee 70% 100%);
+    background: conic-gradient(#0508b9 0% 80%, #eee 80% 100%);
 }
 .java{
-    background: conic-gradient(#fd0728 0% 65%, #eee 65% 100%);
+    background: conic-gradient(#fd0728 0% 60%, #eee 60% 100%);
+}
+
+.self_img{
+    position: absolute;
+    width: 200px;
+    height: auto;
+    right: 35%;
+}
+
+@media screen and (max-width : 400px){
+ 
+    .skill_content{
+        flex-flow: column;
+    }
 }
